@@ -148,6 +148,7 @@ return [
 	 * Other Service Providers
 	 */
 	Illuminate\Html\HtmlServiceProvider::class,
+	Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
     ],
 
     /*

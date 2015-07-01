@@ -48,7 +48,7 @@ class TasksController extends Controller
     {
 	Log::debug('In projects "store" method...  Project ID: ' . $project->id);
 	
-        $input = Input::all();
+        $input = array_except(Input::all(), array('slug'));
 	$input['project_id'] = $project->id;
 	Task::create($input);
 	
@@ -88,7 +88,7 @@ class TasksController extends Controller
      */
     public function update(Project $project, Task $task)
     {
-        $input = array_except(Input::all(), '_method');
+        $input = array_except(Input::all(), array('_method', 'slug'));
 	$task->update($input);
 	
 	return Redirect::route('projects.tasks.show', array($project->slug, $task->slug))->with('message', 'Task updated.');

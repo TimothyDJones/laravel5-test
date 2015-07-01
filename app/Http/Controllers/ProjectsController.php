@@ -42,7 +42,7 @@ class ProjectsController extends Controller
      */
     public function store()
     {
-        $input = Input::all();
+        $input = array_except(Input::all(), array('slug'));
 	Project::create( $input );
 	
 	return Redirect::route('projects.index')->with('message', 'Project created.');
@@ -78,7 +78,7 @@ class ProjectsController extends Controller
      */
     public function update(Project $project)
     {
-        $input = array_except(Input::all(), '_method');
+        $input = array_except(Input::all(), array('_method', 'slug'));
 	$project->update($input);
 	
 	return Redirect::route('projects.show', $project->slug)->with('message', 'Project updated.');
