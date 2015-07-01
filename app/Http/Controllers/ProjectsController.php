@@ -14,6 +14,14 @@ use Redirect;
 
 class ProjectsController extends Controller
 {
+
+	/**
+	 * Validation rules
+	 */
+	protected $rules = array(
+		'name' => array('required', 'min:3', 'regex:/\\w|\\s+/',),
+	);
+	
     /**
      * Display a listing of the resource.
      *
@@ -40,8 +48,11 @@ class ProjectsController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
+	// Validate the request before continuing...
+	$this->validate($request, $this->rules);
+	
         $input = array_except(Input::all(), array('slug'));
 	Project::create( $input );
 	
@@ -76,8 +87,11 @@ class ProjectsController extends Controller
      * @param  \App\Project $project
      * @return Response
      */
-    public function update(Project $project)
+    public function update(Project $project, Request $request)
     {
+	// Validate the request before continuing...
+	$this->validate($request, $this->rules);
+	
         $input = array_except(Input::all(), array('_method', 'slug'));
 	$project->update($input);
 	

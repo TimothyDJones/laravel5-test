@@ -16,6 +16,14 @@ use Log;
 
 class TasksController extends Controller
 {
+	/*
+	 * Validation rules
+	 */
+	protected $rules = array(
+		'name' => array('required', 'min:3', 'regex:/\\w|\\s+/',),
+		'description' => array('required'),
+	);
+	
     /**
      * Display a listing of the resource.
      *
@@ -44,9 +52,12 @@ class TasksController extends Controller
      * @param  \App\Project $project
      * @return Response
      */
-    public function store(Project $project)
+    public function store(Project $project, Request $request)
     {
-	Log::debug('In projects "store" method...  Project ID: ' . $project->id);
+	//Log::debug('In projects "store" method...  Project ID: ' . $project->id);
+	
+	// Validate the request before continuing...
+	$this->validate($request, $this->rules);
 	
         $input = array_except(Input::all(), array('slug'));
 	$input['project_id'] = $project->id;
@@ -86,8 +97,11 @@ class TasksController extends Controller
      * @param  \App\Task $task
      * @return Response
      */
-    public function update(Project $project, Task $task)
+    public function update(Project $project, Task $task, Request $request)
     {
+	// Validate the request before continuing...
+	$this->validate($request, $this->rules);
+	
         $input = array_except(Input::all(), array('_method', 'slug'));
 	$task->update($input);
 	
