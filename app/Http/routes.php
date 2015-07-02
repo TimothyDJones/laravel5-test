@@ -19,6 +19,7 @@ Route::get('/', function () {
 // by using route-model binding
 Route::model('projects', 'Project');
 Route::model('tasks', 'Task');
+Route::model('users', 'User');
 
 Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
@@ -26,9 +27,13 @@ Route::bind('projects', function($value, $route) {
 Route::bind('tasks', function($value, $route) {
 	return App\Task::whereSlug($value)->first();
 });
+Route::bind('users', function($value, $route) {
+	return App\User::find($value)->first();
+});
 
 Route::resource('projects', 'ProjectsController');
 //Route::resource('tasks', 'TasksController');
 Route::resource('projects.tasks', 'TasksController');
+Route::resource('users', 'UsersController');
 
 
