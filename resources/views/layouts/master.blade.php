@@ -8,25 +8,38 @@
 		
 		<!-- http://www.bootstrapzero.com/bootstrap-template/google-plus --> 
 		{!! HTML::style('assets/css/google-plus-theme-styles.css') !!}
+		{!! HTML::style('assets/css/styles.css') !!}
 		
 		{!! HTML::script('assets/js/bootstrap.min.js') !!}
 	</head>
 	<body>
+		@section('navbar')
+			@include('layouts/partials/navbar')
+		@show
+		
 		@section('sidebar')
 			<strong>This is the master sidebar.</strong>
 		@show
 		<div class="content">
 			@if ( Session::has('message') )
-				<div class="flash alert-info">
-					<p>{{ Session::get('message') }}</p>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="flash alert-info">
+							<p>{{ Session::get('message') }}</p>
+						</div>
+					</div>
 				</div>
 			@endif
 			
 			@if ( $errors->any() )
-				<div class="flash alert-danger">
-					@foreach ( $errors->all() as $error )
-						<p>{{ $error }}</p>
-					@endforeach
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="flash alert-danger">
+							@foreach ( $errors->all() as $error )
+								<p>{{ $error }}</p>
+							@endforeach
+						</div>
+					</div>
 				</div>
 			@endif
 		
