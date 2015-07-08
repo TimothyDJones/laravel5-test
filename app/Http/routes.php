@@ -15,6 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Special route for using PHP Data Grid to display "dashboard" list of users.
+ * See http://www.codeproject.com/Articles/1006057/phpGrid-Laravel-and-Bootstrap for details.
+ */
+Route::get('dashboard', function() {
+	require_once(public_path() . '/assets/plugins/phpGrid_Lite/conf.php');
+	
+	$dg = new C_DataGrid("SELECT * FROM users", "id", "users");
+	$dg->enable_edit("INLINE", "CRUD");
+	$dg->enable_autowidth(true)->enable_autoheight(true);
+	$dg->set_theme('cobalt-flat');
+	$dg->display(false);
+	
+	$grid = $dg->get_display(true);
+	return view('dashboard', array('grid' => $grid));
+});
+
 // Provide controller methods with model object instance instead of ID
 // by using route-model binding
 Route::model('projects', 'Project');
