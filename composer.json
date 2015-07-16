@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "illuminate/html": "5.0.*",
         "filp/whoops": "~1.0",
-        "cviebrock/eloquent-sluggable": ">=3.0.0-beta"
+        "cviebrock/eloquent-sluggable": ">=3.0.0-beta",
+        "bican/roles": "2.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
