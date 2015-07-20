@@ -149,6 +149,7 @@ return [
 	 */
 	Illuminate\Html\HtmlServiceProvider::class,
 	Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+	Bestmomo\Scafold\ScafoldServiceProvider::class,
     ],
 
     /*

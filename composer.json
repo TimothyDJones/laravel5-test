@@ -10,7 +10,8 @@
         "illuminate/html": "5.0.*",
         "filp/whoops": "~1.0",
         "cviebrock/eloquent-sluggable": ">=3.0.0-beta",
-        "bican/roles": "2.1.*"
+        "bican/roles": "2.1.*",
+        "bestmomo/scafold": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
