@@ -11,6 +11,12 @@
 		{!! HTML::style('assets/css/styles.css') !!}
 		
 		{!! HTML::script('assets/js/bootstrap.min.js') !!}
+		
+		<!-- AngularJS 
+			http://www.codetutorial.io/laravel-5-angularjs-tutorial/
+		-->
+		{!! HTML::script('assets/js/angular/angular.min.js') !!}
+		{!! HTML::script('assets/js/todo-app.js') !!}
 	</head>
 	<body>
 		@section('navbar')

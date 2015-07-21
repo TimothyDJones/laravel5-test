@@ -53,4 +53,7 @@ Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
 Route::resource('users', 'UsersController');
 
+Route::resource('api/todos', 'TodosController');
+Route::get('todoapp', 'TodoAppController@index');
+
 
