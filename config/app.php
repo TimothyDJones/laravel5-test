@@ -150,6 +150,7 @@ return [
 	Illuminate\Html\HtmlServiceProvider::class,
 	Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 	Bestmomo\Scafold\ScafoldServiceProvider::class,
+	Laravel\Socialite\ScoialiteServiceProvider::class,
     ],
 
     /*
@@ -200,6 +201,7 @@ return [
 	
 	'Form'      => Illuminate\Html\FormFacade::class,
 	'HTML'      => Illuminate\Html\HtmlFacade::class,
+	'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

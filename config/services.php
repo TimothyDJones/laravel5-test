@@ -34,5 +34,15 @@ return [
         'key'    => '',
         'secret' => '',
     ],
+    
+    /**
+      * Socialite Oauth Provider configuration
+      */
+      
+    'github' => array(
+	'client_id' => env('GITHUB_OAUTH_CLIENT_ID', NULL),
+	'client_secret' => env('GITHUB_OAUTH_CLIENT_SECRET', NULL),
+	'redirect' => env('GITHUB_OAUTH_REDIRECT_URL', NULL),	
+    ),
 
 ];
