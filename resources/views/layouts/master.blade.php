@@ -10,6 +10,7 @@
 		{!! HTML::style('assets/css/google-plus-theme-styles.css') !!}
 		{!! HTML::style('assets/css/styles.css') !!}
 		
+		{!! HTML::script('assets/js/jquery.min.js') !!}
 		{!! HTML::script('assets/js/bootstrap.min.js') !!}
 		{!! HTML::script('assets/js/jquery.bootstrap-dropdown-hover.min.js') !!}
 		
@@ -57,7 +58,8 @@
 		
 		<!-- Initialize the Bootstrap Dropdown Hover script -->
 		<script>
-			$('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover();
+			//$('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover();
+			$.fn.bootstrapDropdownHover();
 		</script>
 	</body>
 </html>
