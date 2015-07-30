@@ -20,7 +20,10 @@
           <ul class="nav navbar-nav navbar-right">
              <li><a href="http://www.bootply.com" target="_ext">Bootply+</a></li>
              <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+			<i class="glyphicon glyphicon-bell"></i>
+		</button>
                 <ul class="dropdown-menu">
                   <li><a href="#"><span class="badge pull-right">40</span>Link</a></li>
                   <li><a href="#"><span class="badge pull-right">2</span>Link</a></li>

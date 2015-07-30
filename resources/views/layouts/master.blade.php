@@ -11,6 +11,7 @@
 		{!! HTML::style('assets/css/styles.css') !!}
 		
 		{!! HTML::script('assets/js/bootstrap.min.js') !!}
+		{!! HTML::script('assets/js/jquery.bootstrap-dropdown-hover.min.js') !!}
 		
 		<!-- AngularJS 
 			http://www.codetutorial.io/laravel-5-angularjs-tutorial/
@@ -53,5 +54,10 @@
 				@yield('content')
 			</div>
 		</div>
+		
+		<!-- Initialize the Bootstrap Dropdown Hover script -->
+		<script>
+			$('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover();
+		</script>
 	</body>
 </html>
