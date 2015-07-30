@@ -150,7 +150,7 @@ return [
 	Illuminate\Html\HtmlServiceProvider::class,
 	Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 	Bestmomo\Scafold\ScafoldServiceProvider::class,
-	Laravel\Socialite\ScoialiteServiceProvider::class,
+	Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
