@@ -23,7 +23,7 @@
 							<th>First Name</th>
 							<th>E-Mail Address</th>
 							<th>User Role</th>
-							<th>&bnsp;</th>
+							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
