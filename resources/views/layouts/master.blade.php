@@ -8,9 +8,11 @@
 		
 		<!-- http://www.bootstrapzero.com/bootstrap-template/google-plus --> 
 		{!! HTML::style('assets/css/google-plus-theme-styles.css') !!}
+		{!! HTML::style('assets/css/jquery-ui.min.css') !!}
 		{!! HTML::style('assets/css/styles.css') !!}
 		
 		{!! HTML::script('assets/js/jquery.min.js') !!}
+		{!! HTML::script('assets/js/jquery-ui.min.js') !!}
 		{!! HTML::script('assets/js/bootstrap.min.js') !!}
 		{!! HTML::script('assets/js/jquery.bootstrap-dropdown-hover.min.js') !!}
 		
